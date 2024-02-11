@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Results Sharing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="img.jpg" type="image/jpg">
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var iframes = document.querySelectorAll('iframe');
+      for (var i = 0; i < iframes.length; i++) {
+        iframes[i].addEventListener('touchmove', function (e) {
+          e.stopPropagation();
+        });
+      }
+    });
+
+    // Refresh the page every hour
+    setInterval(function () {
+      location.reload();
+    }, 3600000); // 3600000 milliseconds = 1 hour
+  </script>
+
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 1em 0;
+      position: relative;
+      animation: fadeInUp 1s ease-out;
+      font-weight: bold;
+      /* Apply fadeInUp animation to the header */
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    header img.logo {
+      position: absolute;
+      top: 1px;
+      left: 10px;
+      width: 120px;
+      height: auto;
+    }
+
+    nav {
+      background-color: #333;
+      padding: 0.5em 0;
+      text-align: center;
+      animation: fadeInUp 1s ease-out
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      display: inline;
+      margin-right: 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      animation: glow 0.5s infinite alternate;
+      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff;
+      /* Initial text shadow */
+    }
+
+    main {
+      display: flex;
+      justify-content: center;
+      margin: 50px;
+      /* Default margin */
+      flex-wrap: wrap;
+
+    }
+
+    .iframe-container {
+      width: calc(50% - 40px);
+      max-width: 450px;
+      height: 260px;
+      margin: 20px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      overflow: hidden;
+      animation: popUp 1s ease-out;
+      /* Apply popUp animation to the iframes */
+    }
+
+    @keyframes popUp {
+      from {
+        opacity: 0;
+        transform: scale(0.5) translateY(-50%);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      font-weight: bold;
+      padding: 1em 0;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+
+    /* Add glow effect on text when highlighted */
+    ::selection {
+      color: #fff;
+      background-color: #007bff;
+      /* Highlight color */
+      text-shadow: 0 0 10px #007bff;
+      /* Glowing effect */
+    }
+
+    @media (max-width: 768px) {
+      main {
+        display: flex;
+        justify-content: center;
+        margin: 0px;
+        flex-wrap: wrap;
+        overflow-y: auto;
+      }
+
+      h1 {
+        font-size: 24px;
+        /* Change font size for h1 on mobile */
+        text-align: right;
+        margin-right: 10px;
+        /* Align to the left on mobile */
+      }
+
+      @media (max-width: 650px) {
+        main {
+          display: flex;
+          justify-content: center;
+          margin: 0px;
+          flex-wrap: wrap;
+          overflow-y: auto;
+        }
+
+        h1 {
+          font-size: 20px;
+          /* Change font size for h1 on mobile */
+          text-align: right;
+          margin-right: 10px;
+          /* Align to the left on mobile */
+        }
+
+        header img.logo {
+          position: absolute;
+          top: 1px;
+          left: 1px;
+          width: 75px;
+          height: auto;
+        }
+
+        .iframe-container {
+          width: 450px;
+          max-width: 480px;
+          height: 260px;
+          margin: 10px 5px;
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+          border-radius: 10px;
+          overflow: hidden;
+        }
+
+        iframe {
+          width: 100%;
+          height: 100%;
+          border: none;
+        }
+
+        margin: 0;
+      }
+  </style>
+</head>
+
+<body>
+  <header>
+    <img class="logo" src="golden logo.png" alt="Logo">
+    <h1>Project Results Sharing</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="about_this_project.html">À propos de ce projet</a></li>
+      <li><a href="creators.html">Les créateurs</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="iframe-container">
+      <iframe id="iframe1"
+        src="https://thingspeak.com/channels/2426717/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=1"
+        allowfullscreen scrolling="auto"></iframe>
+    </div>
+    <div class="iframe-container">
+      <iframe id="iframe2"
+        src="https://thingspeak.com/channels/2426717/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=1"
+        allowfullscreen scrolling="auto"></iframe>
+    </div>
+    <div class="iframe-container">
+      <iframe id="iframe3"
+        src="https://thingspeak.com/channels/2426717/charts/3?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=1"
+        allowfullscreen scrolling="auto"></iframe>
+    </div>
+    <div class="iframe-container">
+      <iframe id="iframe4"
+        src="https://thingspeak.com/channels/2426717/charts/4?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=1"
+        allowfullscreen scrolling="auto"></iframe>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Project Results Sharing</p>
+  </footer>
+</body>
+
+</html>
